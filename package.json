@@ -8,6 +8,8 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "echarts": "^5.1.0",
+    "element-ui": "^2.15.1",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
@@ -15,6 +17,8 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",
     "@vue/cli-service": "^3.0.4",
-    "vue-template-compiler": "^2.6.10"
+    "compression-webpack-plugin": "^1.1.12",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^4.4.1"
   }
 }

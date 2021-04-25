@@ -1,12 +1,41 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <countTable :tableData="tableData" @getTableData="tableWay"></countTable>
+
+      <br><br>
+      <graph :tableData="tableData"></graph>
+      <!-- <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> -->
+       <!-- <router-view/> -->
   </div>
 </template>
+
+<script>
+
+import graph from './components/graph.vue'
+import countTable from './components/countTable.vue'
+
+export default {
+  name: 'App',
+  components: {
+    graph,
+    countTable
+    // 'graph':graph,
+    // 'table':table,
+  },
+  data() {
+    return {
+      tableData:[]
+    }
+  },
+  methods: {
+    tableWay(val){
+      this.tableData = val
+    }
+  },
+}
+
+</script>
 
 <style>
 #app {
@@ -16,16 +45,11 @@
   text-align: center;
   color: #2c3e50;
 }
-#nav {
-  padding: 30px;
+.center{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%,-50%);
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
